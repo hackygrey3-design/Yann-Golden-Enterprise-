@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>YANN GOLDEN AGENCY | Property, Rental & Jobs in Grand-Bassam</title>
+
+  <meta
+    name="description"
+    content="YANN GOLDEN AGENCY connects clients with property, rental opportunities, agency services and jobs in Grand-Bassam, Côte d'Ivoire."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7f9;
+      color: #17212b;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    :root {
+      --gold: #d9a441;
+      --dark: #101820;
+      --dark2: #17232e;
+      --cream: #f8f2e7;
+      --white: #ffffff;
+      --green: #167c58;
+      --light: #eef2f4;
+      --muted: #66717b;
+      --border: #e1e6ea;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(16, 24, 32, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), #f2cf7a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span {
+      font-size: 10px;
+      color: #c7cdd1;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #e9edf0;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-button {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(217,164,65,0.22), transparent 30%),
+        linear-gradient(135deg, #101820, #1b2a35);
+      color: white;
+      padding: 95px 22px 85px;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #f1d58f;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 0.98;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #d3dbe0;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 11px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 25px;
+      padding: 25px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.22);
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .hero-card-title {
+      font-weight: 800;
+    }
+
+    .status {
+      background: #dff8ec;
+      color: #16734e;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .hero-stat {
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 28px;
+      color: var(--gold);
+    }
+
+    .hero-stat span {
+      color: #c7d0d6;
+      font-size: 13px;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 85px 22px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.05;
+      margin-bottom: 15px;
+      letter-spacing: -1.5px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fff;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(16,24,32,0.08);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 9px;
+      font-size: 20px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       MARKET
+    ========================= */
+
+    .market {
+      background: var(--light);
+    }
+
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .market-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .market-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(217,164,65,0.08);
+      border-radius: 50%;
+      right: -30px;
+      top: -30px;
+    }
+
+    .market-card .tag {
+      display: inline-block;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #f6edda;
+      color: #8a641c;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .market-card h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .market-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .market-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .market-info span {
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .verified {
+      color: var(--green) !important;
+      border-color: #bce6d2 !important;
+      background: #effbf5;
+    }
+
+    /* =========================
+       AREAS
+    ========================= */
+
+    .areas {
+      background: white;
+    }
+
+    .area-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .area {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      background: #fafbfc;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       PROPERTY
+    ========================= */
+
+    .property {
+      background: var(--dark);
+      color: white;
+    }
+
+    .property .section-head p {
+      color: #bfc8ce;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .property-card {
+      background: #18242d;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .property-image {
+      height: 170px;
+      background:
+        linear-gradient(135deg, rgba(217,164,65,0.35), rgba(255,255,255,0.05)),
+        linear-gradient(45deg, #24333e, #152029);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f5d991;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .property-body {
+      padding: 21px;
+    }
+
+    .property-body h3 {
+      font-size: 19px;
+      margin-bottom: 7px;
+    }
+
+    .property-body p {
+      color: #b8c2c8;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .property-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: #dbe0e4;
+      font-size: 11px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 13px;
+    }
+
+    .property-note {
+      margin-top: 25px;
+      padding: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      color: #c6ced3;
+      font-size: 12px;
+    }
+
+    /* =========================
+       RENTAL
+    ========================= */
+
+    .rental {
+      background: var(--cream);
+    }
+
+    .rental-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .rental-card {
+      background: white;
+      padding: 25px 18px;
+      border-radius: 17px;
+      text-align: center;
+      border: 1px solid #eadfca;
+    }
+
+    .rental-card .number {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .rental-card h3 {
+      font-size: 16px;
+    }
+
+    .rental-card p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    /* =========================
+       JOBS
+    ========================= */
+
+    .jobs {
+      background: white;
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .job-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      background: #fff;
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .job-icon {
+      width: 48px;
+      height: 48px;
+      background: #f1f4f6;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .positions {
+      background: #edf8f3;
+      color: var(--green);
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .job-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .job-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--dark);
+      color: white;
+      border-radius: 25px;
+      padding: 35px;
+    }
+
+    .about-box h3 {
+      color: var(--gold);
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .about-box p {
+      color: #c7d0d5;
+      font-size: 15px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .check {
+      min-width: 27px;
+      height: 27px;
+      background: #dff5e9;
+      color: var(--green);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 900;
+    }
+
+    .about-point strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .about-point span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: white;
+    }
+
+    .contact-box {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(217,164,65,0.2), transparent 28%),
+        var(--dark);
+      color: white;
+      border-radius: 25px;
+      padding: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: #c6cfd4;
+      max-width: 650px;
+    }
+
+    .whatsapp {
+      background: #20c875;
+      color: white;
+      padding: 16px 22px;
+      border-radius: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #0b1116;
+      color: white;
+      padding: 40px 22px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-inner p {
+      color: #89939a;
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      color: #b9c1c6;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 25px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #68737a;
+      font-size: 11px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero-inner,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .service-grid,
+      .jobs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .property-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .rental-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .nav {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 65px 18px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .service-grid,
+      .market-grid,
+      .property-grid,
+      .jobs-grid,
+      .rental-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .contact-box {
+        padding: 30px 24px;
+      }
+
+      .whatsapp {
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <header>
+    <div class="nav">
+
+      <a href="#home" class="brand">
+        <div class="brand-mark">YG</div>
+
+        <div class="brand-text">
+          <strong>YANN GOLDEN</strong>
+          <span>AGENCY</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#property">Property</a>
+        <a href="#rental">Rental</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-button">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-inner">
+
+      <div>
+
+        <div class="eyebrow">
+          📍 Grand-Bassam, Côte d'Ivoire
+        </div>
+
+        <h1>
+          Find the right
+          <span>place.</span>
+          Find the right
+          <span>opportunity.</span>
+        </h1>
+
+        <p>
+          YANN GOLDEN AGENCY connects people with property,
+          rentals, agency services and employment opportunities
+          in Grand-Bassam.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#property"
+            class="button button-gold"
+          >
+            Explore Property
+          </a>
+
+          <a
+            href="https://wa.me/2250749382707"
+            class="button button-outline"
+            target="_blank"
+          >
+            WhatsApp Us
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <div class="hero-card-top">
+
+          <div class="hero-card-title">
+            YANN GOLDEN
+          </div>
+
+          <div class="status">
+            GRAND-BASSAM
+          </div>
+
+        </div>
+
+        <div class="hero-stat">
+          <strong>Property</strong>
+          <span>Sales • Rental • Search • Management</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>Agency</strong>
+          <span>Connecting clients with useful local services</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>Jobs</strong>
+          <span>Employment opportunities for local workers</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================= -->
+
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">
+          What we do
+        </div>
+
+        <h2>
+          One agency. Several ways to help.
+        </h2>
+
+        <p>
+          YANN GOLDEN brings property, rental and agency
+          opportunities together for clients in Grand-Bassam.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <div class="service-card">
+
+          <div class="icon">🏠</div>
+
+          <h3>
+            Property
+          </h3>
+
+          <p>
+            Property sales, land opportunities, apartments,
+            villas and property search services.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="icon">🔑</div>
+
+          <h3>
+            Rental
+          </h3>
+
+          <p>
+            Rental search for studios, rooms, 2-bedroom and
+            3-bedroom properties, apartments and villas.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="icon">🤝</div>
+
+          <h3>
+            Agency & Jobs
+          </h3>
+
+          <p>
+            Local agency support and employment opportunities
+            connecting people with available work.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MARKET RESEARCH
+  ========================= -->
+
+  <section class="market">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">
+          Grand-Bassam Market
+        </div>
+
+        <h2>
+          Property information, organized clearly.
+        </h2>
+
+        <p>
+          Our research looks at real property activity and
+          locations around Grand-Bassam so clients can start
+          their search with useful information.
+        </p>
+
+      </div>
+
+
+      <div class="market-grid">
+
+
+        <div class="market-card">
+
+          <span class="tag">
+            Land
+          </span>
+
+          <h3>
+            Mondoukou
+          </h3>
+
+          <p>
+            Land opportunities identified in the Mondoukou
+            area as part of the local property market research.
+          </p>
+
+          <div class="market-info">
+            <span class="verified">
+              ✓ Market reference
+            </span>
+
+            <span>
+              Grand-Bassam
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="market-card">
+
+          <span class="tag">
+            Apartment
+          </span>
+
+          <h3>
+            CITE EDEN
+          </h3>
+
+          <p>
+            Apartment-related property information identified
+            during the Grand-Bassam market research.
+          </p>
+
+          <div class="market-info">
+            <span class="verified">
+              ✓ Market reference
+            </span>
+
+            <span>
+              Apartment
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="market-card">
+
+          <span class="tag">
+            Villas
+          </span>
+
+          <h3>
+            Oxygene
+          </h3>
+
+          <p>
+            Villa opportunities identified as part of the
+            researched property market around Grand-Bassam.
+          </p>
+
+          <div class="market-info">
+            <span class="verified">
+              ✓ Market reference
+            </span>
+
+            <span>
+              Villa
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="market-card">
+
+          <span class="tag">
+            Land
+          </span>
+
+          <h3>
+            Guy Kanga
+          </h3>
+
+          <p>
+            Land-related opportunities identified during the
+            research of available property activity.
+          </p>
+
+          <div class="market-info">
+            <span class="verified">
+              ✓ Market reference
+            </span>
+
+            <span>
+              Grand-Bassam
+            </span>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       AREAS
+  ========================= -->
+
+  <section class="areas">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">
+          Areas we cover
+        </div>
+
+        <h2>
+          Searching around Grand-Bassam?
+        </h2>
+
+        <p>
+          Property and rental searches can cover several
+          locations across the Grand-Bassam area.
+        </p>
+
+      </div>
+
+
+      <div class="area-grid">
+
+        <div class="area">
+          Bassam Ancien
+        </div>
+
+        <div class="area">
+          Bassam Balnéaire
+        </div>
+
+        <div class="area">
+          Mondoukou
+        </div>
+
+        <div class="area">
+          Mockeyville
+        </div>
+
+        <div class="area">
+          Rosier 1
+        </div>
+
+        <div class="area">
+          Cocoteraie
+        </div>
+
+        <div class="area">
+          Programme
+        </div>
+
+        <div class="area">
+          Guy Kanga
+        </div>
+
+        <div class="area">
+          Ekressèville
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROPERTY
+  ========================= -->
+
+  <section class="property" id="property">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">
+          Property
+        </div>
+
+        <h2>
+          Start your property search.
+        </h2>
+
+        <p>
+          Whether you are looking to buy, rent or find land,
+          YANN GOLDEN can help you identify the right direction
+          for your search.
+        </p>
+
+      </div>
+
+
+      <div class="property-grid">
+
+
+        <div class="property-card">
+
+          <div class="property-image">
+            Land opportunity
+          </div>
+
+          <div class="property-body">
+
+            <h3>
+              Land Sales
+            </h3>
+
+            <p>
+              Explore land opportunities in and around
+              Grand-Bassam.
+            </p>
+
+            <div class="property-meta">
+
+              <span>
+                Land
+              </span>
+
+              <span>
+                Enquire
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="property-card">
+
+          <div class="property-image">
+            Apartment
+          </div>
+
+          <div class="property-body">
+
+            <h3>
+              Apartments
+            </h3>
+
+            <p>
+              Find apartment options suitable for rental
+              or property searches.
+            </p>
+
+            <div class="property-meta">
+
+              <span>
+                Apartment
+              </span>
+
+              <span>
+                Enquire
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="property-card">
+
+          <div class="property-image">
+            Villa
+          </div>
+
+          <div class="property-body">
+
+            <h3>
+              Villas
+            </h3>
+
+            <p>
+              Search for villas and larger residential
+              property opportunities.
+            </p>
+
+            <div class="property-meta">
+
+              <span>
+                Villa
+              </span>
+
+              <span>
+                Enquire
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="property-note">
+
+        <strong>Market information:</strong>
+        Property examples shown on this page are presented
+        as researched market references. Availability,
+        ownership, prices and terms should be confirmed
+        directly with YANN GOLDEN before making a decision.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RENTAL
+  ========================= -->
+
+  <section class="rental" id="rental">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">
+          Rental
+        </div>
+
+        <h2>
+          Tell us what you need.
+        </h2>
+
+        <p>
+          Instead of searching blindly, tell YANN GOLDEN
+          the type of accommodation you are looking for.
+        </p>
+
+      </div>
+
+
+      <div class="rental-grid">
+
+        <div class="rental-card">
+
+          <div class="number">
+            01
+          </div>
+
+          <h3>
+            Studio
+          </h3>
+
+          <p>
+            Compact accommodation
+          </p>
+
+        </div>
+
+
+        <div class="rental-card">
+
+          <div class="number">
+            02
+          </div>
+
+          <h3>
+            Room
+          </h3>
+
+          <p>
+            Single room options
+          </p>
+
+        </div>
+
+
+        <div class="rental-card">
+
+          <div class="number">
+            2
+          </div>
+
+          <h3>
+            Bedrooms
+          </h3>
+
+          <p>
+            Two-bedroom properties
+          </p>
+
+        </div>
+
+
+        <div class="rental-card">
+
+          <div class="number">
+            3
+          </div>
+
+          <h3>
+            Bedrooms
+          </h3>
+
+          <p>
+            Three-bedroom properties
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       JOBS
+  ========================= -->
+
+  <section class="jobs" id="jobs">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">
+          Employment
+        </div>
+
+        <h2>
+          Looking for work?
+        </h2>
+
+        <p>
+          YANN GOLDEN also connects workers with employment
+          opportunities in Grand-Bassam.
+        </p>
+
+      </div>
+
+
+      <div class="jobs-grid">
+
+
+        <!-- WASHER -->
+
+        <div class="job-card">
+
+          <div class="job-top">
+
+            <div class="job-icon">
+              🚗
+            </div>
+
+            <div class="positions">
+              6 POSITIONS
+            </div>
+
+          </div>
+
+          <h3>
+            Washer
+          </h3>
+
+          <p>
+            Car washing and vehicle cleaning opportunities
+            for workers looking for employment.
+          </p>
+
+          <a
+            href="https://wa.me/2250749382707?text=Hello%20YANN%20GOLDEN%2C%20I%20am%20interested%20in%20the%20Washer%20job."
+            target="_blank"
+            class="button button-gold"
+          >
+            Apply / Enquire
+          </a>
+
+        </div>
+
+
+        <!-- HOUSEMAID -->
+
+        <div class="job-card">
+
+          <div class="job-top">
+
+            <div class="job-icon">
+              🏠
+            </div>
+
+            <div class="positions">
+              AVAILABLE
+            </div>
+
+          </div>
+
+          <h3>
+            Housemaid
+          </h3>
+
+          <p>
+            Domestic support opportunities for people
+            seeking household work.
+          </p>
+
+          <a
+            href="https://wa.me/2250749382707?text=Hello%20YANN%20GOLDEN%2C%20I%20am%20interested%20in%20the%20Housemaid%20job."
+            target="_blank"
+            class="button button-gold"
+          >
+            Apply / Enquire
+          </a>
+
+        </div>
+
+
+        <!-- BABY KEEPER -->
+
+        <div class="job-card">
+
+          <div class="job-top">
+
+            <div class="job-icon">
+              👶
+            </div>
+
+            <div class="positions">
+              AVAILABLE
+            </div>
+
+          </div>
+
+          <h3>
+            Baby Keeper
+          </h3>
+
+          <p>
+            Childcare-related employment opportunities
+            for suitable candidates.
+          </p>
+
+          <a
+            href="https://wa.me/2250749382707?text=Hello%20YANN%20GOLDEN%2C%20I%20am%20interested%20in%20the%20Baby%20Keeper%20job."
+            target="_blank"
+            class="button button-gold"
+          >
+            Apply / Enquire
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-box">
+
+          <h3>
+            YANN GOLDEN AGENCY
+          </h3>
+
+          <p>
+            A local agency focused on connecting people
+            with property, rental and employment opportunities
+            in Grand-Bassam.
+          </p>
+
+          <br>
+
+          <p>
+            Whether you are searching for a home, land,
+            a rental property or work, our goal is to make
+            the first step easier.
+          </p>
+
+        </div>
+
+
+        <div class="about-points">
+
+          <div class="about-point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+              <strong>
+                Local focus
+              </strong>
+
+              <span>
+                Focused on Grand-Bassam and surrounding areas.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="about-point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+              <strong>
+                Direct communication
+              </strong>
+
+              <span>
+                Clients can contact the agency directly through
+                WhatsApp.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="about-point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+              <strong>
+                Property research
+              </strong>
+
+              <span>
+                Market references help clients understand the
+                types of opportunities available.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="about-point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+              <strong>
+                Employment support
+              </strong>
+
+              <span>
+                Job opportunities are also part of the agency's
+                local service.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div>
+
+          <div class="section-label">
+            Contact YANN GOLDEN
+          </div>
+
+          <h2>
+            Tell us what you are looking for.
+          </h2>
+
+          <p>
+            Property, rental, land, agency services or jobs —
+            send us a message and explain what you need.
+          </p>
+
+        </div>
+
+
+        <a
+          href="https://wa.me/2250749382707"
+          target="_blank"
+          class="whatsapp"
+        >
+          💬 WhatsApp: +225 07 49 38 27 07
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <div class="brand">
+
+          <div class="brand-mark">
+            YG
+          </div>
+
+          <div class="brand-text">
+
+            <strong>
+              YANN GOLDEN
+            </strong>
+
+            <span>
+              AGENCY
+            </span>
+
+          </div>
+
+        </div>
+
+        <p style="margin-top:12px;">
+          Property • Rental • Agency • Jobs
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#property">
+          Property
+        </a>
+
+        <a href="#jobs">
+          Jobs
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 YANN GOLDEN AGENCY.
+      Grand-Bassam, Côte d'Ivoire.
+      All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
