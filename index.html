@@ -2,120 +2,352 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090909">
-  <meta name="description" content="YANN GOLDEN AGENCY : immobilier, locations et services du quotidien à Grand-Bassam et ses environs, en Côte d’Ivoire.">
-  <title>YANN GOLDEN AGENCY | Grand-Bassam</title>
+  <meta name="description" content="YANN GOLDEN AGENCY : immobilier, locations et services à Grand-Bassam, Côte d'Ivoire.">
+  <title>YANN GOLDEN AGENCY — Grand-Bassam</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Homepage-specific interface */
+    .home-page {
+      --gold: #c9a24a;
+      --gold-light: #ecd28c;
+      --black: #090909;
+      --panel: #141414;
+      --muted: #b9b2a5;
+      margin: 0;
+      background: var(--black);
+      color: #f5f0e7;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+    }
+    .home-page * { box-sizing: border-box; }
+    .home-page a { text-decoration: none; }
+    .home-page .container { width: min(1160px, calc(100% - 36px)); margin: auto; }
+    .home-page .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(9,9,9,.97);
+      border-bottom: 1px solid rgba(201,162,74,.25);
+    }
+    .home-page .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px; padding: 14px 0;
+    }
+    .home-page .brand {
+      display: flex; align-items: center; gap: 12px;
+      color: #f5f0e7; min-width: 0;
+    }
+    .home-page .brand-mark {
+      width: 46px; height: 46px; flex: 0 0 46px;
+      display: grid; place-items: center;
+      border: 1px solid var(--gold); border-radius: 50%;
+      color: var(--gold-light); font-family: Georgia,serif; font-size: 19px;
+    }
+    .home-page .brand-name { display: block; font-size: 14px; font-weight: 800; letter-spacing: 2px; }
+    .home-page .brand-subtitle { display: block; color: var(--gold); font-size: 10px; letter-spacing: 2px; margin-top: 3px; }
+    .home-page .nav-toggle {
+      display: none; width: 46px; height: 44px; padding: 8px;
+      background: transparent; border: 1px solid rgba(201,162,74,.45);
+      color: var(--gold-light); border-radius: 7px; cursor: pointer;
+    }
+    .home-page .nav-toggle span { display: block; height: 2px; background: currentColor; margin: 5px 0; }
+    .home-page .main-nav { display: flex; align-items: center; gap: 17px; }
+    .home-page .main-nav a { color: #c7c0b3; font-size: 13px; white-space: nowrap; padding: 10px 0; }
+    .home-page .main-nav a:hover,
+    .home-page .main-nav a[aria-current="page"] { color: var(--gold-light); }
+    .home-page .main-nav .nav-contact {
+      border: 1px solid var(--gold); border-radius: 5px;
+      padding: 10px 13px; color: var(--gold-light);
+    }
+    .home-page .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 55px;
+      width: min(1160px, calc(100% - 36px));
+      margin: auto; padding: 68px 0 76px;
+    }
+    .home-page .eyebrow {
+      color: var(--gold-light); font-size: 11px;
+      font-weight: 700; letter-spacing: 2.5px; line-height: 1.8;
+    }
+    .home-page .hero h1 {
+      margin: 18px 0 22px; max-width: 620px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 5.5vw, 72px); font-weight: 500;
+      line-height: 1.07; letter-spacing: -1.8px; color: #f5f0e7;
+    }
+    .home-page .hero h1 span { color: var(--gold-light); }
+    .home-page .hero-copy {
+      max-width: 490px; font-size: 16px;
+      color: var(--muted); line-height: 1.9;
+    }
+    .home-page .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .home-page .action {
+      min-height: 49px; display: inline-flex; align-items: center; justify-content: center;
+      padding: 13px 18px; border: 1px solid var(--gold); border-radius: 5px;
+      background: var(--gold); color: #111; font-size: 13px; font-weight: 750;
+      cursor: pointer; transition: background .2s, transform .2s;
+    }
+    .home-page .action:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .home-page .action.secondary { background: transparent; color: var(--gold-light); }
+    .home-page .hero-photo {
+      position: relative; min-height: 420px; overflow: hidden;
+      border: 1px solid rgba(201,162,74,.45); background: #18140d;
+    }
+    .home-page .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .home-page .photo-caption {
+      position: absolute; bottom: 18px; left: 18px; right: 18px;
+      padding: 16px; background: rgba(9,9,9,.82);
+      border-left: 2px solid var(--gold); color: #f5f0e7;
+    }
+    .home-page .photo-caption small { display: block; margin-top: 4px; color: var(--gold-light); letter-spacing: 1px; }
+    .home-page .services { padding: 48px 0 76px; border-top: 1px solid rgba(201,162,74,.2); }
+    .home-page .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: 28px; }
+    .home-page .section-heading h2,
+    .home-page .contact-panel h2 {
+      margin: 7px 0 0; font-family: Georgia,serif;
+      font-size: clamp(30px,4vw,43px); font-weight: 500;
+    }
+    .home-page .service-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px; }
+    .home-page .service-card {
+      display: flex; flex-direction: column; min-height: 220px;
+      padding: 22px; border: 1px solid rgba(201,162,74,.25);
+      background: linear-gradient(145deg,#191919,#101010);
+      color: #f5f0e7; transition: border-color .2s, transform .2s;
+    }
+    .home-page .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .home-page .service-no { color: var(--gold); font-family: Georgia,serif; font-size: 20px; }
+    .home-page .service-card h3 { margin: 24px 0 8px; font-size: 18px; }
+    .home-page .service-card p { margin: 0 0 22px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .home-page .service-link { margin-top: auto; color: var(--gold-light); font-size: 13px; font-weight: 700; }
+    .home-page .contact-area { padding: 0 0 76px; }
+    .home-page .contact-panel {
+      padding: clamp(26px,5vw,48px);
+      border: 1px solid rgba(201,162,74,.3);
+      background: radial-gradient(ellipse at right top,#282116 0%,#141414 55%,#101010 100%);
+    }
+    .home-page .contact-panel p { max-width: 620px; color: var(--muted); line-height: 1.8; }
+    .home-page .request-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 760px; margin-top: 25px; }
+    .home-page .field label { display: block; margin-bottom: 7px; color: #e8dfce; font-size: 13px; }
+    .home-page .field input,
+    .home-page .field select,
+    .home-page .field textarea {
+      width: 100%; min-height: 47px; padding: 12px;
+      border: 1px solid #4a4030; border-radius: 5px;
+      background: #0c0c0c; color: #f5f0e7; font: inherit;
+    }
+    .home-page .field textarea { min-height: 100px; resize: vertical; }
+    .home-page .field.full { grid-column: 1/-1; }
+    .home-page .form-feedback { grid-column: 1/-1; color: var(--gold-light); font-size: 13px; }
+    .home-page .footer { border-top: 1px solid rgba(201,162,74,.22); padding: 30px 0; color: var(--muted); font-size: 12px; }
+    .home-page .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .home-page .footer a { color: var(--gold-light); }
+    .home-page a:focus-visible,
+    .home-page button:focus-visible,
+    .home-page input:focus-visible,
+    .home-page select:focus-visible,
+    .home-page textarea:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+@media (max-width: 980px) {
+  .home-page .header-inner { flex-wrap: wrap; }
+  .home-page .nav-toggle { display: block; }
+  .home-page .main-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 12px; }
+  .home-page .main-nav.open { display: flex; }
+  .home-page .main-nav a { padding: 12px 8px; border-bottom: 1px solid rgba(201,162,74,.12); }
+  .home-page .main-nav .nav-contact { text-align: center; margin-top: 8px; }
+  .home-page .hero { gap: 28px; }
+  .home-page .hero-photo { min-height: 360px; }
+  .home-page .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .home-page .container,
+  .home-page .hero { width: calc(100% - 28px); }
+  .home-page .hero { grid-template-columns: 1fr; gap: 28px; padding: 46px 0 50px; }
+  .home-page .hero h1 { font-size: clamp(42px,12vw,60px); }
+  .home-page .hero-photo { min-height: 300px; }
+  .home-page .actions { flex-direction: column; }
+  .home-page .actions .action { width: 100%; }
+  .home-page .services { padding: 38px 0 50px; }
+  .home-page .section-heading { align-items: start; flex-direction: column; }
+  .home-page .service-grid { gap: 10px; }
+  .home-page .service-card { min-height: 200px; padding: 16px; }
+  .home-page .service-card h3 { margin-top: 18px; font-size: 16px; }
+  .home-page .request-form { grid-template-columns: 1fr; }
+  .home-page .field.full { grid-column: auto; }
+  .home-page .contact-area { padding-bottom: 48px; }
+}
+@media (max-width: 360px) {
+  .home-page .service-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page *, .home-page *::before, .home-page *::after {
+    scroll-behavior: auto !important; transition-duration: .01ms !important;
+  }
+}
+  </style>
 </head>
 <body class="home-page">
   <header class="site-header">
-    <div class="container">
-      <div class="site-header-inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;">
-        <a class="home-brand" href="index.html" aria-label="YANN GOLDEN AGENCY, accueil">
-          <span class="brand-mark">YG</span>
-          <span>
-            <span class="brand-name">YANN GOLDEN</span>
-            <span class="brand-subtitle">AGENCY · GRAND-BASSAM</span>
-          </span>
-        </a>
-    <nav class="home-nav" aria-label="Navigation principale">
-      <a href="index.html" aria-current="page">Accueil</a>
-      <a href="property.html">Immobilier</a>
-      <a href="rentals.html">Locations</a>
-      <a href="cleaning.html">Nettoyage</a>
-      <a href="jobs.html">Emploi</a>
-      <a href="about.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</div>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="YANN GOLDEN AGENCY, accueil">
+        <span class="brand-mark">YG</span>
+        <span>
+          <span class="brand-name">YANN GOLDEN</span>
+          <span class="brand-subtitle">AGENCY · GRAND-BASSAM</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="property.html">Immobilier</a>
+        <a href="rentals.html">Locations</a>
+        <a href="cleaning.html">Nettoyage</a>
+        <a href="jobs.html">Emploi</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-contact" href="https://wa.me/2250749382707?text=Bonjour%20YANN%20GOLDEN%20AGENCY" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+      </nav>
+    </div>
   </header>
   <main>
-    <section class="home-hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="hero-kicker">L'IMMOBILIER ET LES SERVICES, AUTREMENT</p>
-    <h1 id="hero-title">Votre prochain projet <span>commence ici.</span></h1>
-    <p class="hero-description">
-      Immobilier, location et services du quotidien à Grand-Bassam
-      et ses environs. Notre équipe vous accompagne avec sérieux,
-      proximité et attention.
-    </p>
-    <div class="hero-actions">
-      <a
-        class="btn whatsapp-button"
-        href="https://wa.me/2250749382707?text=Bonjour%20YANN%20GOLDEN%20AGENCY%2C%20je%20souhaite%20obtenir%20des%20renseignements."
-        target="_blank"
-        rel="noopener noreferrer"
-      >Parler à notre équipe sur WhatsApp</a>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <p class="eyebrow">L'IMMOBILIER ET LES SERVICES, AUTREMENT</p>
+        <h1 id="heroTitle">Votre prochain projet <span>commence ici.</span></h1>
+        <p class="hero-copy">
+          Immobilier, location et services du quotidien à Grand-Bassam et ses environs.
+          Un accompagnement de proximité, avec sérieux et attention.
+        </p>
+        <div class="actions">
+          <a class="action" href="https://wa.me/2250749382707?text=Bonjour%20YANN%20GOLDEN%20AGENCY%2C%20je%20souhaite%20parler%20de%20mon%20projet." target="_blank" rel="noopener noreferrer">Parler à notre équipe sur WhatsApp ↗</a>
+          <a class="action secondary" href="#services">Explorer nos services ↓</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85"
+          alt="Villa contemporaine et jardin"
+          fetchpriority="high"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85';"
+        >
+        <div class="photo-caption">YANN GOLDEN AGENCY<small>GRAND-BASSAM · CÔTE D'IVOIRE</small></div>
+      </div>
+    </section>
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">UN ACCOMPAGNEMENT DE PROXIMITÉ</p>
+        <h2>Nos services</h2>
+      </div>
+      <p>Découvrez comment nous pouvons vous accompagner.</p>
+    </div>
+    <div class="service-grid">
+      <a class="service-card" href="property.html">
+        <span class="service-no">01</span>
+        <h3>Immobilier</h3>
+        <p>Terrains et propriétés</p>
+        <span class="service-link">Découvrir le service ↗</span>
+      </a>
+      <a class="service-card" href="rentals.html">
+        <span class="service-no">02</span>
+        <h3>Locations</h3>
+        <p>Studios, chambres et logements</p>
+        <span class="service-link">Trouver un logement ↗</span>
+      </a>
+      <a class="service-card" href="cleaning.html">
+        <span class="service-no">03</span>
+        <h3>Nettoyage</h3>
+        <p>Services à domicile</p>
+        <span class="service-link">Faire une demande ↗</span>
+      </a>
+      <a class="service-card" href="jobs.html">
+        <span class="service-no">04</span>
+        <h3>Emploi</h3>
+        <p>Renseignements et candidatures</p>
+        <span class="service-link">En savoir plus ↗</span>
+      </a>
     </div>
   </div>
-  <div
-    class="hero-art"
-    role="img"
-    aria-label="Villa contemporaine entourée de verdure"
-  >
-    <span class="monogram" aria-hidden="true">YG</span>
-  </div>
 </section>
-<section class="services-section" aria-labelledby="services-title">
-  <div class="section-heading">
-    <div>
-      <p class="eyebrow">UN ACCOMPAGNEMENT DE PROXIMITÉ</p>
-      <h2 id="services-title">Nos services</h2>
+<section class="contact-area" id="demande">
+  <div class="container">
+    <div class="contact-panel">
+      <p class="eyebrow">PARLONS DE VOTRE PROJET</p>
+      <h2>Comment pouvons-nous vous aider ?</h2>
+      <p>Choisissez un service et décrivez brièvement votre besoin. Votre demande sera préparée pour WhatsApp afin que vous puissiez la vérifier avant de l'envoyer.</p>
+      <form class="request-form" id="requestForm">
+        <div class="field">
+          <label for="customerName">Votre nom</label>
+          <input id="customerName" name="customerName" autocomplete="name" placeholder="Votre nom" required>
+        </div>
+        <div class="field">
+          <label for="serviceType">Service souhaité</label>
+          <select id="serviceType" name="serviceType" required>
+            <option value="">Choisir un service</option>
+            <option>Immobilier</option>
+            <option>Location</option>
+            <option>Nettoyage à domicile</option>
+            <option>Renseignements sur l'emploi</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="customerMessage">Votre demande</label>
+          <textarea id="customerMessage" name="customerMessage" placeholder="Expliquez-nous ce que vous recherchez..." required></textarea>
+        </div>
+        <div class="field full">
+          <button class="action" type="submit">Préparer ma demande sur WhatsApp ↗</button>
+        </div>
+        <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
-  <div class="services-grid">
-    <article class="service-card">
-      <span class="service-number" aria-hidden="true">01</span>
-      <h3>Immobilier</h3>
-      <p>Terrains et propriétés</p>
-      <a href="property.html">Découvrir <span aria-hidden="true">→</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-number" aria-hidden="true">02</span>
-      <h3>Locations</h3>
-      <p>Logements adaptés à vos besoins</p>
-      <a href="rentals.html">Découvrir <span aria-hidden="true">→</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-number" aria-hidden="true">03</span>
-      <h3>Nettoyage</h3>
-      <p>Services à domicile</p>
-      <a href="cleaning.html">Découvrir <span aria-hidden="true">→</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-number" aria-hidden="true">04</span>
-      <h3>Emploi</h3>
-      <p>Renseignements et candidatures</p>
-      <a href="jobs.html">Découvrir <span aria-hidden="true">→</span></a>
-    </article>
-  </div>
-</section>
-<section class="home-contact" aria-labelledby="contact-title">
-  <p class="eyebrow">PARLONS DE VOTRE PROJET</p>
-  <h2 id="contact-title">Nous sommes à votre écoute.</h2>
-  <p>
-    Vous recherchez un logement, un bien immobilier ou un service ?
-    Contactez notre équipe pour nous expliquer votre besoin.
-  </p>
-  <a
-    class="btn whatsapp-button"
-    href="https://wa.me/2250749382707?text=Bonjour%20YANN%20GOLDEN%20AGENCY%2C%20je%20souhaite%20parler%20de%20mon%20projet."
-    target="_blank"
-    rel="noopener noreferrer"
-  >Nous contacter sur WhatsApp</a>
 </section>
   </main>
-  <footer class="site-footer">
-    <p><strong>YANN GOLDEN AGENCY</strong></p>
-    <p>Immobilier et services du quotidien · Grand-Bassam, Côte d’Ivoire</p>
-    <p><a href="contact.html">Contact</a> · <a href="about.html">À propos</a></p>
-    <p>© <span id="current-year">2026</span> YANN GOLDEN AGENCY. Tous droits réservés.</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>YANN GOLDEN AGENCY</strong><br>Grand-Bassam, Côte d'Ivoire</div>
+      <div><a href="about.html">À propos</a> · <a href="contact.html">Contact</a></div>
+      <div>© <span id="year"></span> YANN GOLDEN AGENCY</div>
+    </div>
   </footer>
   <script>
-    document.getElementById("current-year").textContent =
-      new Date().getFullYear();
+    const navToggle = document.getElementById("navToggle");
+    const mainNav = document.getElementById("mainNav");
+    navToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    });
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Ouvrir le menu");
+      });
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("requestForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const name = document.getElementById("customerName").value.trim();
+      const service = document.getElementById("serviceType").value;
+      const message = document.getElementById("customerMessage").value.trim();
+      const feedback = document.getElementById("formFeedback");
+      if (!name || !service || !message) {
+        feedback.textContent = "Veuillez remplir tous les champs avant de continuer.";
+        return;
+      }
+      const text = [
+        "Bonjour YANN GOLDEN AGENCY,",
+        "",
+        "Je m'appelle " + name + ".",
+        "Service souhaité : " + service + ".",
+        "Ma demande : " + message
+      ].join("\n");
+      feedback.textContent = "Votre message est prêt. WhatsApp va s'ouvrir pour vous permettre de l'envoyer.";
+      const whatsappUrl = "https://wa.me/2250749382707?text=" + encodeURIComponent(text);
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
   </script>
 </body>
 </html>
