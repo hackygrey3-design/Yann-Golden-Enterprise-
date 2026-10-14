@@ -1,0 +1,1123 @@
+/* =========================================
+YANN GOLDEN AGENCY
+Shared website stylesheet
+French-first | Responsive | Multi-page
+========================================= */
+
+/* 1. BRAND VARIABLES */
+
+:root {
+–gold: #d9a441;
+–gold-light: #f2cf7a;
+–dark: #101820;
+–dark-2: #17232e;
+–cream: #f8f2e7;
+–white: #ffffff;
+–green: #167c58;
+–light: #eef2f4;
+–muted: #66717b;
+–border: #e1e6ea;
+–radius: 18px;
+–shadow: 0 12px 35px rgba(16, 24, 32, 0.08);
+}
+
+/* 2. RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 90px;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f5f7f9;
+color: #17212b;
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
+
+img {
+display: block;
+max-width: 100%;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+font: inherit;
+}
+
+button,
+a {
+-webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+outline: 3px solid var(–gold);
+outline-offset: 4px;
+}
+
+.container {
+width: min(1200px, calc(100% - 44px));
+margin-inline: auto;
+}
+
+section {
+padding: 76px 0;
+}
+
+/* 3. HEADER AND NAVIGATION */
+
+.site-header,
+header {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: rgba(16, 24, 32, 0.98);
+border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(12px);
+}
+
+.nav {
+width: min(1200px, calc(100% - 44px));
+min-height: 76px;
+margin-inline: auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 24px;
+}
+
+.brand {
+display: inline-flex;
+align-items: center;
+gap: 12px;
+color: var(–white);
+flex-shrink: 0;
+}
+
+.brand-mark {
+width: 44px;
+height: 44px;
+border-radius: 12px;
+background: linear-gradient(135deg, var(–gold), var(–gold-light));
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(–dark);
+font-weight: 900;
+font-size: 17px;
+}
+
+.brand-text strong {
+display: block;
+font-size: 15px;
+line-height: 1.4;
+letter-spacing: 1px;
+}
+
+.brand-text span {
+display: block;
+color: #c7cdd1;
+font-size: 10px;
+letter-spacing: 2px;
+}
+
+nav {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+nav a {
+color: #e9edf0;
+font-size: 13px;
+font-weight: 700;
+transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a[aria-current=“page”] {
+color: var(–gold-light);
+}
+
+.nav-button {
+padding: 11px 16px;
+border-radius: 10px;
+background: var(–gold);
+color: var(–dark) !important;
+font-weight: 800;
+}
+
+/* Mobile navigation button.
+The button is hidden until a page includes it. */
+
+.menu-toggle {
+display: none;
+border: 1px solid rgba(255, 255, 255, 0.2);
+background: transparent;
+color: white;
+padding: 9px 12px;
+border-radius: 9px;
+cursor: pointer;
+font-weight: 700;
+}
+
+/* 4. HERO */
+
+.hero {
+position: relative;
+overflow: hidden;
+padding: 88px 0;
+background:
+radial-gradient(
+circle at 82% 18%,
+rgba(217, 164, 65, 0.2),
+transparent 32%
+),
+linear-gradient(135deg, var(–dark), #1b2a35);
+color: var(–white);
+}
+
+.hero-inner {
+width: min(1200px, calc(100% - 44px));
+margin-inline: auto;
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 48px;
+align-items: center;
+}
+
+.eyebrow {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 13px;
+margin-bottom: 20px;
+border: 1px solid rgba(255, 255, 255, 0.13);
+border-radius: 999px;
+background: rgba(255, 255, 255, 0.07);
+color: #f1d58f;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 1px;
+}
+
+.hero h1 {
+max-width: 800px;
+margin-bottom: 22px;
+font-size: clamp(38px, 6vw, 68px);
+line-height: 1.06;
+letter-spacing: -2px;
+}
+
+.hero h1 span {
+color: var(–gold);
+}
+
+.hero p {
+max-width: 650px;
+margin-bottom: 28px;
+color: #d3dbe0;
+font-size: 17px;
+}
+
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.hero-card {
+padding: 26px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+border-radius: 24px;
+background: rgba(255, 255, 255, 0.07);
+box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card-top {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+margin-bottom: 20px;
+}
+
+.hero-card-title {
+font-weight: 900;
+}
+
+.status {
+padding: 5px 9px;
+border-radius: 999px;
+background: #dff8ec;
+color: #16734e;
+font-size: 10px;
+font-weight: 900;
+}
+
+.hero-stat {
+padding: 17px 0;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-stat strong {
+display: block;
+color: var(–gold);
+font-size: 24px;
+}
+
+.hero-stat span {
+color: #c7d0d6;
+font-size: 13px;
+}
+
+/* 5. BUTTONS */
+
+.button {
+display: inline-flex;
+min-height: 46px;
+align-items: center;
+justify-content: center;
+gap: 8px;
+padding: 12px 19px;
+border: 1px solid transparent;
+border-radius: 11px;
+font-weight: 800;
+text-align: center;
+cursor: pointer;
+transition:
+transform 0.2s ease,
+background 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.button:hover {
+transform: translateY(-2px);
+}
+
+.button-gold {
+background: var(–gold);
+color: var(–dark);
+}
+
+.button-gold:hover {
+background: var(–gold-light);
+}
+
+.button-outline {
+border-color: rgba(255, 255, 255, 0.25);
+background: rgba(255, 255, 255, 0.04);
+color: var(–white);
+}
+
+.button-dark {
+background: var(–dark);
+color: var(–white);
+}
+
+.button-green,
+.whatsapp {
+background: #20c875;
+color: var(–white);
+}
+
+.button-block {
+width: 100%;
+}
+
+/* 6. SECTION HEADINGS */
+
+.section-head {
+max-width: 760px;
+margin-bottom: 38px;
+}
+
+.section-label {
+margin-bottom: 10px;
+color: #9a711f;
+font-size: 12px;
+font-weight: 900;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.section-head h2,
+.page-heading h1 {
+margin-bottom: 14px;
+font-size: clamp(30px, 5vw, 46px);
+line-height: 1.13;
+letter-spacing: -1.2px;
+}
+
+.section-head p,
+.page-heading p {
+color: var(–muted);
+font-size: 16px;
+}
+
+/* 7. SERVICE CARDS */
+
+.services,
+.white-section {
+background: var(–white);
+}
+
+.service-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 20px;
+}
+
+.service-card {
+padding: 27px;
+border: 1px solid var(–border);
+border-radius: var(–radius);
+background: var(–white);
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+transform: translateY(-4px);
+box-shadow: var(–shadow);
+}
+
+.icon {
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 18px;
+border-radius: 14px;
+background: var(–cream);
+font-size: 23px;
+}
+
+.service-card h3,
+.card h3 {
+margin-bottom: 8px;
+font-size: 20px;
+}
+
+.service-card p,
+.card p {
+color: var(–muted);
+font-size: 14px;
+}
+
+.card-link {
+display: inline-flex;
+margin-top: 18px;
+color: #8a641c;
+font-weight: 800;
+}
+
+/* 8. GENERAL GRIDS AND CARDS */
+
+.grid {
+display: grid;
+gap: 20px;
+}
+
+.grid-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card {
+padding: 24px;
+border: 1px solid var(–border);
+border-radius: var(–radius);
+background: var(–white);
+}
+
+.card-image {
+width: 100%;
+height: 200px;
+margin-bottom: 18px;
+border-radius: 12px;
+background: linear-gradient(135deg, #e8e1d2, #cbd4d8);
+object-fit: cover;
+}
+
+.tag {
+display: inline-block;
+padding: 5px 9px;
+margin-bottom: 12px;
+border-radius: 999px;
+background: #f6edda;
+color: #8a641c;
+font-size: 10px;
+font-weight: 900;
+text-transform: uppercase;
+}
+
+/* 9. PROPERTY AND MARKET SECTIONS */
+
+.market-section {
+background: var(–light);
+}
+
+.market-card {
+position: relative;
+overflow: hidden;
+padding: 25px;
+border: 1px solid var(–border);
+border-radius: 20px;
+background: var(–white);
+}
+
+.market-card h3 {
+margin-bottom: 8px;
+font-size: 22px;
+}
+
+.market-card p {
+margin-bottom: 16px;
+color: var(–muted);
+font-size: 14px;
+}
+
+.market-info {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.market-info span {
+padding: 6px 9px;
+border: 1px solid var(–border);
+border-radius: 8px;
+font-size: 11px;
+font-weight: 700;
+}
+
+.verified {
+border-color: #bce6d2 !important;
+background: #effbf5;
+color: var(–green);
+}
+
+.property-section {
+background: var(–dark);
+color: var(–white);
+}
+
+.property-section .section-head p {
+color: #c7d0d6;
+}
+
+.property-card {
+overflow: hidden;
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: var(–radius);
+background: #18242d;
+}
+
+.property-image {
+min-height: 175px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+background:
+linear-gradient(
+135deg,
+rgba(217, 164, 65, 0.3),
+rgba(255, 255, 255, 0.04)
+),
+linear-gradient(45deg, #24333e, #152029);
+color: #f5d991;
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 1px;
+text-align: center;
+text-transform: uppercase;
+}
+
+.property-body {
+padding: 21px;
+}
+
+.property-body h3 {
+margin-bottom: 7px;
+font-size: 19px;
+}
+
+.property-body p {
+margin-bottom: 15px;
+color: #c0c9ce;
+font-size: 13px;
+}
+
+.property-meta {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+padding-top: 13px;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+color: #dbe0e4;
+font-size: 12px;
+}
+
+.property-note,
+.notice {
+margin-top: 24px;
+padding: 17px;
+border: 1px solid var(–border);
+border-radius: 12px;
+background: rgba(255, 255, 255, 0.06);
+font-size: 13px;
+}
+
+.notice {
+background: #fff9eb;
+color: #59451d;
+}
+
+/* 10. AREAS */
+
+.areas-section {
+background: var(–white);
+}
+
+.area-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.area {
+padding: 10px 15px;
+border: 1px solid var(–border);
+border-radius: 999px;
+background: #fafbfc;
+font-size: 13px;
+font-weight: 700;
+}
+
+/* 11. RENTALS */
+
+.rental-section {
+background: var(–cream);
+}
+
+.rental-card {
+padding: 24px 18px;
+border: 1px solid #eadfca;
+border-radius: 17px;
+background: var(–white);
+text-align: center;
+}
+
+.rental-number {
+margin-bottom: 5px;
+color: #b4872c;
+font-size: 30px;
+font-weight: 900;
+}
+
+.rental-card h3 {
+font-size: 17px;
+}
+
+.rental-card p {
+margin-top: 5px;
+color: var(–muted);
+font-size: 12px;
+}
+
+/* 12. JOBS AND DOMESTIC SERVICES */
+
+.jobs-section,
+.staff-section {
+background: var(–white);
+}
+
+.job-card,
+.staff-card {
+padding: 25px;
+border: 1px solid var(–border);
+border-radius: var(–radius);
+background: var(–white);
+}
+
+.job-top {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 12px;
+margin-bottom: 17px;
+}
+
+.job-icon {
+width: 48px;
+height: 48px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 13px;
+background: #f1f4f6;
+font-size: 22px;
+}
+
+.positions {
+padding: 6px 9px;
+border-radius: 999px;
+background: #edf8f3;
+color: var(–green);
+font-size: 10px;
+font-weight: 900;
+}
+
+.job-card h3,
+.staff-card h3 {
+margin-bottom: 8px;
+font-size: 20px;
+}
+
+.job-card p,
+.staff-card p {
+margin-bottom: 18px;
+color: var(–muted);
+font-size: 14px;
+}
+
+/* 13. ABOUT */
+
+.about-section {
+background: var(–light);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 42px;
+align-items: center;
+}
+
+.about-box {
+padding: 34px;
+border-radius: 24px;
+background: var(–dark);
+color: var(–white);
+}
+
+.about-box h2,
+.about-box h3 {
+margin-bottom: 14px;
+color: var(–gold);
+font-size: 27px;
+}
+
+.about-box p {
+color: #c7d0d5;
+font-size: 15px;
+}
+
+.about-points {
+display: grid;
+gap: 18px;
+}
+
+.about-point {
+display: flex;
+align-items: flex-start;
+gap: 13px;
+}
+
+.check {
+min-width: 27px;
+height: 27px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background: #dff5e9;
+color: var(–green);
+font-weight: 900;
+}
+
+.about-point strong {
+display: block;
+margin-bottom: 3px;
+}
+
+.about-point span {
+color: var(–muted);
+font-size: 13px;
+}
+
+/* 14. CONTACT */
+
+.contact-section {
+background: var(–white);
+}
+
+.contact-box {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 28px;
+padding: 42px;
+border-radius: 24px;
+background:
+radial-gradient(
+circle at 85% 15%,
+rgba(217, 164, 65, 0.2),
+transparent 28%
+),
+var(–dark);
+color: var(–white);
+}
+
+.contact-box h2 {
+margin-bottom: 10px;
+font-size: clamp(29px, 5vw, 44px);
+line-height: 1.15;
+}
+
+.contact-box p {
+max-width: 650px;
+color: #c6cfd4;
+}
+
+.whatsapp {
+display: inline-flex;
+min-height: 48px;
+align-items: center;
+justify-content: center;
+padding: 14px 20px;
+border-radius: 12px;
+font-weight: 900;
+text-align: center;
+white-space: nowrap;
+}
+
+/* 15. FORMS */
+
+.form {
+display: grid;
+gap: 17px;
+}
+
+.form-group {
+display: grid;
+gap: 7px;
+}
+
+.form label {
+font-size: 14px;
+font-weight: 800;
+}
+
+.form input,
+.form select,
+.form textarea {
+width: 100%;
+min-height: 46px;
+padding: 12px 14px;
+border: 1px solid #cfd7dd;
+border-radius: 10px;
+background: var(–white);
+color: var(–dark);
+}
+
+.form textarea {
+min-height: 130px;
+resize: vertical;
+}
+
+.form small {
+color: var(–muted);
+font-size: 12px;
+}
+
+/* 16. PAGE HEADINGS AND BREADCRUMBS */
+
+.page-heading {
+padding: 65px 0;
+background:
+radial-gradient(
+circle at 85% 15%,
+rgba(217, 164, 65, 0.17),
+transparent 30%
+),
+var(–dark);
+color: var(–white);
+}
+
+.page-heading h1 {
+max-width: 850px;
+}
+
+.page-heading p {
+max-width: 700px;
+color: #c7d0d6;
+}
+
+.breadcrumb {
+margin-bottom: 13px;
+color: var(–gold-light);
+font-size: 12px;
+font-weight: 700;
+}
+
+.breadcrumb a {
+text-decoration: underline;
+text-underline-offset: 3px;
+}
+
+/* 17. FOOTER */
+
+.site-footer,
+footer {
+padding: 38px 0 22px;
+background: #0b1116;
+color: var(–white);
+}
+
+.footer-inner {
+width: min(1200px, calc(100% - 44px));
+margin-inline: auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 28px;
+}
+
+.footer-inner p {
+margin-top: 10px;
+color: #89939a;
+font-size: 12px;
+}
+
+.footer-links {
+display: flex;
+flex-wrap: wrap;
+gap: 17px;
+color: #b9c1c6;
+font-size: 12px;
+}
+
+.footer-links a:hover {
+color: var(–gold-light);
+}
+
+.footer-bottom {
+width: min(1200px, calc(100% - 44px));
+margin: 24px auto 0;
+padding-top: 18px;
+border-top: 1px solid rgba(255, 255, 255, 0.08);
+color: #89939a;
+font-size: 11px;
+}
+
+/* 18. MOBILE NAVIGATION SUPPORT */
+
+.mobile-nav {
+display: none;
+}
+
+.mobile-nav.is-open {
+display: flex;
+flex-direction: column;
+gap: 0;
+padding: 8px 22px 18px;
+background: var(–dark);
+}
+
+.mobile-nav a {
+padding: 12px 0;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+color: var(–white);
+font-weight: 700;
+}
+
+/* 19. RESPONSIVE LAYOUT */
+
+@media (max-width: 950px) {
+.nav {
+gap: 14px;
+}
+
+nav {
+gap: 12px;
+}
+
+nav a {
+font-size: 12px;
+}
+
+.hero-inner {
+grid-template-columns: 1fr;
+gap: 32px;
+}
+
+.hero-card {
+max-width: 620px;
+}
+
+.grid-4 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-box {
+align-items: flex-start;
+flex-direction: column;
+}
+}
+
+@media (max-width: 760px) {
+section {
+padding: 58px 0;
+}
+
+.container,
+.nav,
+.hero-inner,
+.footer-inner,
+.footer-bottom {
+width: calc(100% - 36px);
+}
+
+.nav {
+min-height: 70px;
+}
+
+nav {
+display: none;
+}
+
+.menu-toggle {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+
+.hero {
+padding: 62px 0;
+}
+
+.hero h1 {
+font-size: clamp(36px, 9vw, 54px);
+letter-spacing: -1.5px;
+}
+
+.hero p {
+font-size: 15px;
+}
+
+.hero-actions {
+flex-direction: column;
+}
+
+.hero-actions .button {
+width: 100%;
+}
+
+.service-grid,
+.grid-3 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-grid {
+grid-template-columns: 1fr;
+gap: 28px;
+}
+
+.contact-box {
+padding: 28px 22px;
+}
+
+.whatsapp {
+width: 100%;
+white-space: normal;
+}
+
+.footer-inner {
+align-items: flex-start;
+flex-direction: column;
+}
+}
+
+@media (max-width: 520px) {
+.service-grid,
+.grid-2,
+.grid-3,
+.grid-4 {
+grid-template-columns: 1fr;
+}
+
+.section-head {
+margin-bottom: 27px;
+}
+
+.section-head h2,
+.page-heading h1 {
+font-size: 32px;
+}
+
+.hero-card,
+.service-card,
+.card,
+.job-card,
+.staff-card {
+padding: 21px;
+}
+
+.about-box {
+padding: 26px 22px;
+}
+
+.page-heading {
+padding: 48px 0;
+}
+
+.footer-links {
+gap: 13px;
+}
+}
+
+/* 20. REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+}
